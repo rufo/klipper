@@ -1,13 +1,17 @@
+Contact
+=======
+
 This document provides contact information for Klipper.
 
-1. [I have a question about Klipper](#i-have-a-question-about-klipper)
-2. [I have a feature request](#i-have-a-feature-request)
-3. [Help! It doesn't work!](#help-it-doesnt-work)
-4. [I would like to share the findings of work that I have done](#i-would-like-to-share-the-findings-of-work-that-i-have-done)
-5. [I found a bug in Klipper](#i-found-a-bug-in-klipper)
-6. [I am making changes that I'd like to include in Klipper](#i-am-making-changes-that-id-like-to-include-in-klipper)
-7. [Klipper Community Discord](#discord)
-8. [Klipper mailing list](#mailing-list)
+- [Contact](#contact)
+- [I have a question about Klipper](#i-have-a-question-about-klipper)
+- [I have a feature request](#i-have-a-feature-request)
+- [Help! It doesn't work!](#help-it-doesnt-work)
+- [I would like to share the findings of work that I have done](#i-would-like-to-share-the-findings-of-work-that-i-have-done)
+- [I found a bug in Klipper](#i-found-a-bug-in-klipper)
+- [I am making changes that I'd like to include in Klipper](#i-am-making-changes-that-id-like-to-include-in-klipper)
+- [Discord](#discord)
+- [Mailing list](#mailing-list)
 
 I have a question about Klipper
 ===============================

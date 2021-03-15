@@ -1,3 +1,5 @@
+# Command Templates
+
 This document provides information on implementing G-Code command
 sequences in gcode_macro (and similar) config sections.
 

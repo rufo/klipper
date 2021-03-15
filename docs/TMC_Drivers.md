@@ -1,3 +1,4 @@
+# Trinamic (TMC) Stepper Driver Info
 This document provides information on using Trinamic stepper motor
 drivers in SPI/UART mode on Klipper.
 

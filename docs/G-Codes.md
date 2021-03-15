@@ -1,3 +1,5 @@
+# G-Code Reference
+
 This document describes the commands that Klipper supports. These are
 commands that one may enter into the OctoPrint terminal tab.
 

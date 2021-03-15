@@ -1,3 +1,6 @@
+Beaglebone
+==========
+
 This document describes the process of running Klipper on a Beaglebone
 PRU.
 

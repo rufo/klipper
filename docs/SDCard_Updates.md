@@ -1,3 +1,6 @@
+Flashing a Controller via SD Card
+=================================
+
 Many of today's popular controller boards ship with a bootloader capable of
 updating firmware via SD Card.  While this is convenient in many
 circumstances, these bootloaders typically provide no other way to update

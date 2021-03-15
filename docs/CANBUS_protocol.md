@@ -1,3 +1,5 @@
+# CANBUS Protocol
+
 This document describes the protocol Klipper uses to communicate over
 [CAN bus](https://en.wikipedia.org/wiki/CAN_bus). See
 [CANBUS.md](CANBUS.md) for information on configuring Klipper with CAN

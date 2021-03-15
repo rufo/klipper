@@ -1,3 +1,6 @@
+Debugging
+=========
+
 This document describes some of the Klipper debugging tools.
 
 Translating gcode files to micro-controller commands

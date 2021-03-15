@@ -1,3 +1,5 @@
+# Bed leveling
+
 Bed leveling (sometimes also referred to as "bed tramming") is
 critical to getting high quality prints. If a bed is not properly
 "leveled" it can lead to poor bed adhesion, "warping", and subtle

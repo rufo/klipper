@@ -1,3 +1,6 @@
+Kinematics
+==========
+
 This document provides an overview of how Klipper implements robot
 motion (its [kinematics](https://en.wikipedia.org/wiki/Kinematics)).
 The contents may be of interest to both developers interested in

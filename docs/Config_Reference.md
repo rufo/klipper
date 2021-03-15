@@ -1,3 +1,5 @@
+# Configuration Reference
+
 This document is a reference for options available in the Klipper
 config file.
 

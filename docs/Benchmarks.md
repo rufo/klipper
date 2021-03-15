@@ -1,3 +1,6 @@
+Benchmarks
+==========
+
 This document describes Klipper benchmarks.
 
 Micro-controller Benchmarks

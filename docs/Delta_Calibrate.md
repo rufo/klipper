@@ -1,3 +1,6 @@
+Delta Calibration
+=================
+
 This document describes Klipper's automatic calibration system for
 "delta" style printers.
 

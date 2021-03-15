@@ -1,3 +1,6 @@
+Bootloaders
+===========
+
 This document provides information on common bootloaders found on
 micro-controllers that Klipper supports.
 

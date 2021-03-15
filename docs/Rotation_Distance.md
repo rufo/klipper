@@ -1,3 +1,5 @@
+# Rotation Distance
+
 Stepper motor drivers on Klipper require a `rotation_distance`
 parameter in each
 [stepper config section](Config_Reference.md#stepper). The

@@ -1,3 +1,6 @@
+Code Overview
+=============
+
 This document describes the overall code layout and major code flow of
 Klipper.
 

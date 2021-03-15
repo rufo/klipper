@@ -1,3 +1,5 @@
+# Micro-controller Protocol
+
 The Klipper messaging protocol is used for low-level communication
 between the Klipper host software and the Klipper micro-controller
 software. At a high level the protocol can be thought of as a series
