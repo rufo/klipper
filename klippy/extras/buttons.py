@@ -214,8 +214,6 @@ class FullStepRotaryEncoder(BaseRotaryEncoder):
         (R_CCW_NEXT, R_CCW_FINAL, R_CCW_BEGIN, BaseRotaryEncoder.R_START)
     )
 
-    pass
-
 class HalfStepRotaryEncoder(BaseRotaryEncoder):
     # Use the half-step state table (emits a code at 00 and 11)
     R_CCW_BEGIN   = 0x1
@@ -247,8 +245,6 @@ class HalfStepRotaryEncoder(BaseRotaryEncoder):
         (R_START_M, R_CCW_BEGIN_M, R_START_M,
          BaseRotaryEncoder.R_START | BaseRotaryEncoder.R_DIR_CCW),
     )
-
-    pass
 
 
 ######################################################################
