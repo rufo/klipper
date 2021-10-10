@@ -294,8 +294,7 @@ class PrinterButtons:
         elif steps_per_detent == 4:
             re = FullStepRotaryEncoder(ccw_callback, ccw_callback)
         else:
-            ppins = self.printer.lookup_object('pins')
-            raise ppins.error(
+            raise self.printer.config_error(
                 "%d steps per detent not supported" % steps_per_detent)
         self.register_buttons([pin1, pin2], re.encoder_callback)
     def register_button_push(self, pin, callback):
