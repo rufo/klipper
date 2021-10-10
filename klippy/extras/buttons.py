@@ -291,7 +291,7 @@ class PrinterButtons:
         if steps_per_detent == 2:
             re = HalfStepRotaryEncoder(cw_callback, ccw_callback)
         elif steps_per_detent == 4:
-            re = FullStepRotaryEncoder(ccw_callback, ccw_callback)
+            re = FullStepRotaryEncoder(cw_callback, ccw_callback)
         else:
             raise self.printer.config_error(
                 "%d steps per detent not supported" % steps_per_detent)
