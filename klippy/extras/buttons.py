@@ -3,6 +3,7 @@
 # Copyright (C) 2018  Kevin O'Connor <kevin@koconnor.net>
 #
 # This file may be distributed under the terms of the GNU GPLv3 license.
+from _typeshed import Self
 import logging
 
 
@@ -177,60 +178,74 @@ class BaseRotaryEncoder:
             self.ccw_callback(eventtime)
 
 class FullStepRotaryEncoder(BaseRotaryEncoder):
-    R_START     = 0x0
     R_CW_FINAL  = 0x1
     R_CW_BEGIN  = 0x2
     R_CW_NEXT   = 0x3
     R_CCW_BEGIN = 0x4
     R_CCW_FINAL = 0x5
     R_CCW_NEXT  = 0x6
-    R_DIR_CW    = 0x10
-    R_DIR_CCW   = 0x20
-    R_DIR_MSK   = 0x30
 
     # Use the full-step state table (emits a code at 00 only)
     ENCODER_STATES = (
         # R_START
-        (R_START,    R_CW_BEGIN,  R_CCW_BEGIN, R_START),
+        (BaseRotaryEncoder.R_START, R_CW_BEGIN, R_CCW_BEGIN,
+         BaseRotaryEncoder.R_START),
+
         # R_CW_FINAL
-        (R_CW_NEXT,  R_START,     R_CW_FINAL,  R_START | R_DIR_CW),
+        (R_CW_NEXT, BaseRotaryEncoder.R_START, R_CW_FINAL,
+         BaseRotaryEncoder.R_START | BaseRotaryEncoder.R_DIR_CW),
+
         # R_CW_BEGIN
-        (R_CW_NEXT,  R_CW_BEGIN,  R_START,     R_START),
+        (R_CW_NEXT, R_CW_BEGIN, BaseRotaryEncoder.R_START,
+         BaseRotaryEncoder.R_START),
+
         # R_CW_NEXT
-        (R_CW_NEXT,  R_CW_BEGIN,  R_CW_FINAL,  R_START),
+        (R_CW_NEXT, R_CW_BEGIN, R_CW_FINAL, BaseRotaryEncoder.R_START),
+
         # R_CCW_BEGIN
-        (R_CCW_NEXT, R_START,     R_CCW_BEGIN, R_START),
+        (R_CCW_NEXT, BaseRotaryEncoder.R_START, R_CCW_BEGIN,
+         BaseRotaryEncoder.R_START),
+
         # R_CCW_FINAL
-        (R_CCW_NEXT, R_CCW_FINAL, R_START,     R_START | R_DIR_CCW),
+        (R_CCW_NEXT, R_CCW_FINAL, BaseRotaryEncoder.R_START,
+         BaseRotaryEncoder.R_START | BaseRotaryEncoder.R_DIR_CCW),
+
         # R_CCW_NEXT
-        (R_CCW_NEXT, R_CCW_FINAL, R_CCW_BEGIN, R_START)
+        (R_CCW_NEXT, R_CCW_FINAL, R_CCW_BEGIN, BaseRotaryEncoder.R_START)
     )
 
     pass
 
 class HalfStepRotaryEncoder(BaseRotaryEncoder):
     # Use the half-step state table (emits a code at 00 and 11)
-    R_START       = 0x0
     R_CCW_BEGIN   = 0x1
     R_CW_BEGIN    = 0x2
     R_START_M     = 0x3
     R_CW_BEGIN_M  = 0x4
     R_CCW_BEGIN_M = 0x5
-    R_DIR_CW    = 0x10
-    R_DIR_CCW   = 0x20
+
     ENCODER_STATES = (
         # R_START (00)
-        (R_START_M,             R_CW_BEGIN,     R_CCW_BEGIN,  R_START),
+        (R_START_M, R_CW_BEGIN, R_CCW_BEGIN, BaseRotaryEncoder.R_START),
+
         # R_CCW_BEGIN
-        (R_START_M | R_DIR_CCW, R_START,        R_CCW_BEGIN,  R_START),
+        (R_START_M | BaseRotaryEncoder.R_DIR_CCW, BaseRotaryEncoder.R_START,
+         R_CCW_BEGIN, BaseRotaryEncoder.R_START),
+
         # R_CW_BEGIN
-        (R_START_M | R_DIR_CW,  R_CW_BEGIN,     R_START,      R_START),
+        (R_START_M | BaseRotaryEncoder.R_DIR_CW,  R_CW_BEGIN,
+         BaseRotaryEncoder.R_START, BaseRotaryEncoder.R_START),
+
         # R_START_M (11)
-        (R_START_M,             R_CCW_BEGIN_M,  R_CW_BEGIN_M, R_START),
+        (R_START_M, R_CCW_BEGIN_M, R_CW_BEGIN_M,  BaseRotaryEncoder.R_START),
+
         # R_CW_BEGIN_M
-        (R_START_M,          R_START_M,      R_CW_BEGIN_M, R_START | R_DIR_CW),
+        (R_START_M, R_START_M, R_CW_BEGIN_M,
+         BaseRotaryEncoder.R_START | BaseRotaryEncoder.R_DIR_CW),
+
         # R_CCW_BEGIN_M
-        (R_START_M,          R_CCW_BEGIN_M,  R_START_M,    R_START | R_DIR_CCW),
+        (R_START_M, R_CCW_BEGIN_M, R_START_M,
+         BaseRotaryEncoder.R_START | BaseRotaryEncoder.R_DIR_CCW),
     )
 
     pass
